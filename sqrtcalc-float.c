@@ -28,7 +28,7 @@ double get_square_root(double n) {
 
     // This is a while loop which stops running when high - low is less than the defined precision,
     // or the max_iterations is reached
-    while ((high - low) > precision){
+    while ((high - low) > precision) {
         // Prints the high, low, guess and iteration of this iteration
         printf("\nhigh: {%.15f} | low: {%.15f} | guess: {%.15f} | iteration: {%d}", high, low, guess, iteration);
         
