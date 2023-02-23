@@ -56,6 +56,8 @@ double get_square_root(double n) {
             iteration++;
         }
     }
+
+    // After the loop is finished this returns the last guess as the square root of the number of iterations
     return guess;
 }
 
