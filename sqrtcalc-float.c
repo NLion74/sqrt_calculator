@@ -4,7 +4,7 @@
 double get_square_root(double n) {
     // returns 1 which stands for error when n is negative
     // we cant use negative numbers because we use the low 0 and negative numbers would be below that value
-    if (n < 0){
+    if (n < 0) {
         printf("\nNegative numbers are not allowed");
         return 1;
     }
