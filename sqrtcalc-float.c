@@ -33,17 +33,17 @@ double get_square_root(double n) {
         printf("\nhigh: {%.15f} | low: {%.15f} | guess: {%.15f} | iteration: {%d}", high, low, guess, iteration);
         
         // Advanced:
-        // If the high plus low divided by 2 to the power of high plus low divided by 2 is greater than n the high becomes the current guess
-        // If the high plus low divided by 2 to the power of high plus low divided by 2 is less than n the low becomes the current guess
+        // If the high plus low divided by 2 to the power of 2 is greater than n the high becomes the current guess
+        // If the high plus low divided by 2 to the power of 2 is less than n the low becomes the current guess
         // The guess then becomes the new high plus low divided by 2
         //
         // Basic:
         // If the guess is to great the high becomes the current guess
         // If the guess is to low the low becomes the current guess
         // The guess then becomes the middle of the high and low
-        if (((high + low) / 2.0) * ((high + low) / 2.0) > n)
+        if (((high + low) / 2.0) * 2 > n)
             high = guess;
-        else if (((high + low) / 2.0) * ((high + low) / 2.0) < n)
+        else if (((high + low) / 2.0) * 2 < n)
             low = guess;
         guess = (((high + low) / 2.0));
 
