@@ -20,6 +20,7 @@ double get_square_root(double n) {
     double precision = 0.000000000000001;
 
     // Defines when the loop should break
+    // Is defined so in case something goes wrong it does not go on forever
     int max_iterations = 200;
 
     // Defines the iteration because it has to be defined before it can be used in the loop below
