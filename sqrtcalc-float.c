@@ -1,6 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+double precision = 0.000000000000001;
+
+int max_iterations = 200;
+
+
 double get_square_root(double n) {
     // returns 1 which stands for error when n is negative
     // we cant use negative numbers because we use the low 0 and negative numbers would be below that value
@@ -16,19 +21,11 @@ double get_square_root(double n) {
     double low = 0;
     double guess = (((high + low) / 2.0));
 
-    // defines the precision of the square root
-    double precision = 0.000000000000001;
-
-    // Defines when the loop should break
-    // Is defined so in case something goes wrong it does not go on forever
-    int max_iterations = 200;
-
-    // Defines the iteration because it has to be defined before it can be used in the loop below
     int iteration = 0;
 
     // This is a while loop which stops running when high - low is less than the defined precision,
     // or the max_iterations is reached
-    while ((high - low) > precision || iteration >= (max_iterations - 1)) {
+    while ((high - low) > precision) {
         // Prints the high, low, guess and iteration of this iteration
         printf("\nhigh: {%.15f} | low: {%.15f} | guess: {%.15f} | iteration: {%d}", high, low, guess, iteration);
         
@@ -47,8 +44,14 @@ double get_square_root(double n) {
             low = guess;
         guess = (((high + low) / 2.0));
 
-        // Increases the iteration counter
-        iteration++;
+        // Used to increase the number of iterations and break the loop if the number of iterations reaches the max_iterations
+        // It is max_iterations - 1 because computers start counting at 0
+        if (iteration >= (max_iterations - 1)) {
+            break;
+        }
+        else {
+            iteration++;
+        }
     }
 
     // After the loop is finished this returns the last guess as the square root of the number of iterations
@@ -57,13 +60,12 @@ double get_square_root(double n) {
 
 long main (long n) {
     // Gets the user input
-    printf ("\nEnter the number you wanna get the square root of: ");
-    scanf ("%d", &n);
+    printf("\nEnter the number you wanna get the square root of: ");
+    scanf("%d", &n);
 
-    // Gets the square root of the input
     double square_root = get_square_root(n);
 
     // Prints the square root
-    printf ("\n\n{%.15f} is the square root of the number{%d}\n", square_root, n);
+    printf("\n\n{%.15f} is the square root of the number{%d}\n", square_root, n);
     return 0;
 }
