@@ -38,9 +38,9 @@ double get_square_root(double n) {
         // If the guess is to great the high becomes the current guess
         // If the guess is to low the low becomes the current guess
         // The guess then becomes the middle of the high and low
-        if (((high + low) / 2.0) * 2 > n)
+        if (((high + low) / 2.0) * ((high + low) / 2.0) > n)
             high = guess;
-        else if (((high + low) / 2.0) * 2 < n)
+        else if (((high + low) / 2.0) * ((high + low) / 2.0) < n)
             low = guess;
         guess = (((high + low) / 2.0));
 
